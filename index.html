@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JavaScript Quiz</title>
-<link rel="stylesheet" href="./assets/CSS/reset.css">
-<link rel="stylesheet" href="./assets/CSS/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Quiz</title>
+    <link rel="stylesheet" href="./assets/CSS/reset.css" />
+    <link rel="stylesheet" href="./assets/CSS/styles.css" />
+  </head>
+  <body>
+    <div id="quiz-container">
+      <h1>JavaScript Fundamentals Quiz</h1>
+      <div id="question-container" class="hide">
+        <div id="question">Question text...</div>
+        <div id="answer-buttons" class="btn-grid">
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
+          <button class="btn">Answer 4</button>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+      </div>
+      <div id="timer">Time: <span id="time-left">3</span> Seconds</div>
 
-<div id="quiz-container">
-  <h1>JavaScript Fundamentals Quiz</h1>
-  <div id="question-container" class="hide">
-    <div id="question">Question text...</div>
-    <div id="answer-buttons" class="btn-grid">
-      <button class="btn">Answer 1</button>
-      <button class="btn">Answer 2</button>
-      <button class="btn">Answer 3</button>
-      <button class="btn">Answer 4</button>
+      <div id="game-over-container" class="hide">
+        <h2>Your Score: <span id="final-score"></span></h2>
+        <form id="score-form">
+          <label for="initials">Enter Initials:</label>
+          <input type="text" id="initials" name="initials" required />
+          <button type="submit" class="submit-btn btn">Submit</button>
+        </form>
+      </div>
     </div>
-  </div>
-  <div class="controls">
-    <button id="start-btn" class="start-btn btn">Start</button>
-    <button id="next-btn" class="next-btn btn hide">Next</button>
-  </div>
-  <div id="timer">Time: <span id="time-left">60</span> Seconds</div>
-</div>
 
-<div id="game-over-container" class="hide">
-  <h2>Your Score: <span id="final-score"></span></h2>
-  <form id="score-form">
-    <label for="initials">Enter Initials:</label>
-    <input type="text" id="initials" name="initials" required>
-    <button type="submit" class="submit-btn btn">Submit</button>
-  </form>
-</div>
-
-<script src="./assets/Javascript/script.js"></script> <!-- Link your JavaScript file here -->
-</body>
+    <script src="./assets/Javascript/script.js"></script>
+  </body>
 </html>
