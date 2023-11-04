@@ -61,15 +61,29 @@ function selectAnswer(e) {
   const selectedButton = e.target;
   const correct = selectedButton.dataset.correct;
   const trutherElement = document.getElementById("truther");
+  const timerElement = document.getElementById("timer");
+
+  trutherElement.classList.remove('correct', 'wrong');
+  timerElement.classList.remove('flash-wrong');
+
   if (correct) {
     console.log("Correct!");
+    trutherElement.classList.add('correct');
     trutherElement.textContent = "Correct!";
-    truther = "Correct!"
   } else {
     console.log("Wrong!");
-    trutherElement.textContent = "Wrong!";
-    truther = "Wrong!"
-  }
+  totalSeconds -= 5;
+  updateTimerDisplay(totalSeconds);
+  trutherElement.classList.add('wrong');
+  trutherElement.textContent = "Wrong, minus 5 seconds...";
+  timerElement.classList.remove('flash-wrong');
+  void timerElement.offsetWidth;
+  timerElement.classList.add('flash-wrong');
+  
+  setTimeout(() => {
+    timerElement.classList.remove('flash-wrong');
+  }, 500);
+}
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
     showQuestion(currentQuestionIndex);
@@ -77,6 +91,7 @@ function selectAnswer(e) {
     endQuiz();
   }
 }
+
 
 //TIMER CODE
 function updateTimerDisplay(seconds) {
@@ -106,6 +121,7 @@ function startQuiz() {
 }
 
 function endQuiz() {
+  updateTimerDisplay(totalSeconds)
   clearInterval(timeInterval);
   document.getElementById("question-container").classList.add("hide");
   document.getElementById("game-over-container").classList.remove("hide");
