@@ -1,9 +1,79 @@
-// Get the HTML elements
 const startButton = document.getElementById("start-btn");
 const timerDisplay = document.getElementById("time-left");
 let totalSeconds = document.getElementById("time-left").textContent; // Seconds are nabbed from the html
 let timeInterval;
 
+//Questions as an array of Objects
+const questions = [
+  {
+    question: "This is question text 1",
+    answers: [
+      { text: "1a", correct: false },
+      { text: "1b", correct: false },
+      { text: "1c", correct: true },
+      { text: "1d", correct: false },
+    ],
+  },
+  {
+    question: "This is question text 2",
+    answers: [
+      { text: "2a", correct: false },
+      { text: "2b", correct: true },
+      { text: "2c", correct: false },
+      { text: "2d", correct: false },
+    ],
+  },
+  {
+    question: "True or False?",
+    answers: [
+      { text: "True", correct: false },
+      { text: "False", correct: true },
+    ],
+  },
+];
+
+//QUESTION CODE
+let currentQuestionIndex = 0;
+
+function showQuestion(questionIndex) {
+  const questionObj = questions[questionIndex];
+  const questionElement = document.getElementById("question");
+  const answerButtonsElement = document.getElementById("answer-buttons");
+
+  // Clear previous buttons' event listeners
+  answerButtonsElement.innerHTML = "";
+
+  questionElement.textContent = questionObj.question;
+
+  questionObj.answers.forEach((answer) => {
+    const button = document.createElement("button");
+    button.textContent = answer.text;
+    button.classList.add("btn");
+    if (answer.correct) {
+      button.dataset.correct = answer.correct;
+    }
+    button.addEventListener("click", selectAnswer);
+    answerButtonsElement.appendChild(button);
+  });
+}
+
+function selectAnswer(e) {
+  const selectedButton = e.target;
+  const correct = selectedButton.dataset.correct;
+  if (correct) {
+    console.log("Correct!");
+  } else {
+    console.log("Wrong!");
+  }
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion(currentQuestionIndex);
+  } else {
+    endQuiz();
+  }
+}
+
+//TIMER CODE
 function updateTimerDisplay(seconds) {
   timerDisplay.textContent = seconds;
 }
@@ -14,7 +84,6 @@ function startTimer() {
     updateTimerDisplay(totalSeconds);
 
     if (totalSeconds <= 0) {
-      clearInterval(timeInterval);
       endQuiz();
     }
   }, 1000);
@@ -25,6 +94,7 @@ function startQuiz() {
   totalSeconds = document.getElementById("time-left").textContent;
   updateTimerDisplay(totalSeconds);
   startTimer();
+  showQuestion(currentQuestionIndex);
   document.getElementById("question-container").classList.remove("hide");
 }
 
