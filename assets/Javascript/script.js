@@ -60,10 +60,15 @@ function showQuestion(questionIndex) {
 function selectAnswer(e) {
   const selectedButton = e.target;
   const correct = selectedButton.dataset.correct;
+  const trutherElement = document.getElementById("truther");
   if (correct) {
     console.log("Correct!");
+    trutherElement.textContent = "Correct!";
+    truther = "Correct!"
   } else {
     console.log("Wrong!");
+    trutherElement.textContent = "Wrong!";
+    truther = "Wrong!"
   }
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
@@ -96,6 +101,8 @@ function startQuiz() {
   startTimer();
   showQuestion(currentQuestionIndex);
   document.getElementById("question-container").classList.remove("hide");
+  document.getElementById("question-feedback").classList.remove("hide")
+  document.getElementById("intro").classList.add("hide");
 }
 
 function endQuiz() {
