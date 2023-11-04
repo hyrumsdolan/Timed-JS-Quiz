@@ -1,97 +1,121 @@
-/* Basic Reset */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
   
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    line-height: 1.6;
-  }
-  
-  #quiz-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  #timer {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-  
-  .btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  .btn {
-    background-color: #5D93E1;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  
-  .btn:hover {
-    background-color: #4a7ab7;
-  }
-  
-  .controls {
-    text-align: center;
-    padding-top: 20px;
-  }
-  
-  .hide {
-    display: none;
-  }
-  
-  #game-over-container {
-    text-align: center;
-  }
-  
-  #final-score {
-    font-size: 1.4em;
-    color: #333;
-  }
-  
-  #score-form {
-    margin-top: 20px;
-  }
-  
-  #score-form input[type="text"] {
-    padding: 5px;
-    margin-right: 5px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-  }
-  
-  .submit-btn {
-    background-color: #77dd77;
-    color: white;
-  }
-  
-  .submit-btn:hover {
-    background-color: #5ebc5e;
-  }
-  
-  /* Add any additional styling you prefer here */
-  
-  
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #333; /* Dark background for the overall layout */
+  color: #ddd; /* Light text for contrast */
+  line-height: 1.6;
+}
+
+#quiz-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #222; 
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #5D93E1; 
+  margin-bottom: 20px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#timer {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#question-feedback {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #5D93E1;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #4a7ab7;
+}
+
+.controls {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+#game-over-container {
+  text-align: center;
+}
+
+#final-score {
+  font-size: 1.4em;
+  color: #5D93E1;
+}
+
+#score-form {
+  margin-top: 20px;
+}
+
+#score-form input[type="text"] {
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background: #222;
+  color: #ddd;
+}
+
+.submit-btn {
+  background-color: #4b944b;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #3c763c;
+}
+
+#question {
+  background: #444;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#answer-buttons button {
+  margin-bottom: 10px;
+}

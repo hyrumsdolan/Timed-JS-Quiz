@@ -10,20 +10,29 @@
   <body>
     <div id="quiz-container">
       <h1>JavaScript Fundamentals Quiz</h1>
+      <div id="intro">
+        <p>
+          This quiz will test your knowledge of JavaScript fundamentals. You
+          will have 50 seconds to answer 10 questions. For each incorrect
+          answer, 10 seconds will be deducted from the timer. Your final score
+          will be the number of seconds remaining on the timer at the end of the
+          quiz.
+        </p>
+      </div>
+      <div id="timer">Time: <span id="time-left">50</span> Seconds</div>
+      
       <div id="question-container" class="hide">
         <div id="question">Question text...</div>
+        <div id="question-feedback" class="hide">Your last response was <span id="truther">unavailable</span></div>
         <div id="answer-buttons" class="btn-grid">
-          <button class="btn">Answer 1</button>
-          <button class="btn">Answer 2</button>
-          <button class="btn">Answer 3</button>
-          <button class="btn">Answer 4</button>
+          <!-- Answer buttons will be dynamically inserted here -->
         </div>
       </div>
       <div class="controls">
         <button id="start-btn" class="start-btn btn">Start</button>
         <button id="next-btn" class="next-btn btn hide">Next</button>
       </div>
-      <div id="timer">Time: <span id="time-left">3</span> Seconds</div>
+      
 
       <div id="game-over-container" class="hide">
         <h2>Your Score: <span id="final-score"></span></h2>
@@ -33,7 +42,7 @@
           <button type="submit" class="submit-btn btn">Submit</button>
         </form>
       </div>
-    </div>
+
 
     <script src="./assets/Javascript/script.js"></script>
   </body>
