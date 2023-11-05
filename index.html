@@ -19,20 +19,19 @@
           quiz.
         </p>
       </div>
-      <div id="timer">Time: <span id="time-left">50</span> Seconds</div>
-      
+      <div id="timer">Time: <span id="time-left">60</span> Seconds</div>
+
       <div id="question-container" class="hide">
         <div id="question">Question text...</div>
-        <div id="question-feedback" class="hide">Your last response was <span id="truther">unavailable</span></div>
-        <div id="answer-buttons" class="btn-grid">
-          <!-- Answer buttons will be dynamically inserted here -->
+        <div id="question-feedback" class="hide">
+          Your last response was <span id="truther"></span>
         </div>
+        <div id="answer-buttons" class="btn-grid"></div>
       </div>
       <div class="controls">
         <button id="start-btn" class="start-btn btn">Start</button>
         <button id="next-btn" class="next-btn btn hide">Next</button>
       </div>
-      
 
       <div id="game-over-container" class="hide">
         <h2>Your Score: <span id="final-score"></span></h2>
@@ -43,6 +42,13 @@
         </form>
       </div>
 
+      <div id="scoreboard-container" class="hide">
+        <h2>Scoreboard</h2>
+        <ul id="score-list"></ul>
+        <button id="clear-scores-btn" class="btn">Clear Scoreboard</button>
+        <button id="retry-btn" class="btn">Retry</button>
+      </div>
+    </div>
 
     <script src="./assets/Javascript/script.js"></script>
   </body>
