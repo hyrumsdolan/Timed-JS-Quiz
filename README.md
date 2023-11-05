@@ -6,3 +6,5 @@ This repository contains a simple, interactive JavaScript quiz game designed to 
 ## Snapshot
 ![Snapshot](./assets/Images/Snapshot.png)
 
+## Deployment Link
+https://hyrumsdolan.github.io/Timed-JS-Quiz/
