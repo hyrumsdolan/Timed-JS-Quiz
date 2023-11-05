@@ -127,6 +127,52 @@ p {
   margin-bottom: 10px;
 }
 
+#scoreboard-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #222; /* Consistent with the theme */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#score-list {
+  list-style: none;
+  padding: 0;
+}
+
+#score-list li {
+  background-color: #333; /* Slightly lighter than the container for contrast */
+  border-bottom: 1px solid #444; /* Separator for each score */
+  padding: 10px;
+  color: #ddd;
+  font-weight: bold;
+}
+
+#score-list li:last-child {
+  border-bottom: none; /* Remove border from the last item */
+}
+
+#clear-scores-btn,
+#retry-btn {
+  margin-top: 20px;
+  width: 49%; /* Two buttons side by side, accounting for the gap */
+}
+
+/* Additional hover effects for the scoreboard buttons */
+#clear-scores-btn:hover,
+#retry-btn:hover {
+  filter: brightness(0.9);
+}
+
+/* When there's no scoreboard, let's give some feedback */
+#scoreboard-container:empty:before {
+  content: "No scores yet. Take the quiz to see your score here!";
+  color: #777; /* A lighter text color for the placeholder text */
+  font-style: italic;
+}
+
+
 /* Remove the background-color from #timer-flash */
 #timer-flash {
   animation: flashRed .5s;
